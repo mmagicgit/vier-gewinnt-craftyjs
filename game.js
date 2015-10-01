@@ -21,7 +21,7 @@ for (var column = 0; column <= maxColumn; column++) {
 
 Crafty.bind("KeyDown", function (e) {
     var column = e.key - 49;
-    if (column < 0 || column > maxColumn) {
+    if (column < 0 || column > maxColumn || matrix[column][maxLine] != Player.Empty) {
         return;
     }
     var line = _.indexOf(matrix[column], Player.Empty);
